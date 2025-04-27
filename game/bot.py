@@ -100,4 +100,8 @@ class Bot(pygame.sprite.Sprite):
                 self.player.hp -= 10
 
     def change_animation(self, animation):
-        if self.current_animation != animation
+        if self.current_animation != animation:
+            self.currrent_animatiuon = animation
+            self.sprites = self.spritesheets(self.current_animation)
+            self.current_sprite = 0
+            self.animation_speed = self.animation_speeds(animation)
