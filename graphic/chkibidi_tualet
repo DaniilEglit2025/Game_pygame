@@ -1,0 +1,17 @@
+import tkinter as tkinter
+from tkinter.filedialog import askopenfilename, askasksaveasfilename
+
+def open_file():
+    """Открываем файл для редоктирования"""
+    filepath = askopenfilename(
+        filetypes=[("Текстовые файлы","*.txt")])
+
+if not filepath:
+    return
+    txt_edit.delete("1.0", tk.END)
+    with open(filepath, "r") as input_file:
+        text = input_file.read()
+        txt_edit.insert(tk.END, text)
+    window.title(f"Простой текстовый редактор - {filepath}")
+
+window = tk.Tk()
